@@ -1,6 +1,6 @@
 {
-    "name": "myuichat",
-    "short_name": "myuichat",
+    "name": "uichat",
+    "short_name": "uichat",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
