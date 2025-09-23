@@ -1,0 +1,54 @@
+name: settings_screen
+description: 設定完成画面（通知設定・テーマ選択・各種項目）
+rendering_environment: scrollable
+
+widgets:
+  - type: ListView
+    id: settings_list_view
+    properties:
+      itemSpacing: 4
+      padding:
+        all: 8
+      children:
+        - type: ListItem
+          id: notification_header_list_item
+          properties:
+            title:
+              - type: Text
+                id: notification_text_title
+                properties:
+                  text: "通知設定"
+            leading:
+              - type: Icon
+                id: notification_icon
+                properties:
+                  icon: "notifications"
+        - type: CheckboxGroup
+          id: notification_checkbox_group
+          properties:
+            labels: ["新着メッセージ", "イベント通知", "お知らせ"]
+            values: [true, false, true]
+        - type: Divider
+          id: divider_1
+          properties:
+            height: 16
+            thickness: 1
+            color: "#E0E0E0"
+        - type: ListItem
+          id: theme_header_list_item
+          properties:
+            leading:
+              - type: Icon
+                id: theme_icon
+                properties:
+                  icon: "palette"
+            title:
+              - type: Text
+                id: theme_text_title
+                properties:
+                  text: "テーマ選択"
+        - type: RadioGroup
+          id: theme_radio_group
+          properties:
+            groupValue: "ライト"
+            labels: ["ライト", "ダーク", "システム設定"]

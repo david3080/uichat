@@ -1,0 +1,175 @@
+name: dashboard_screen
+description: ダッシュボード完成画面（ウェルカムメッセージ・統計カード・お知らせ一覧）
+rendering_environment: adaptive
+
+widgets:
+  - type: Column
+    id: main_column
+    properties:
+      spacing: 16
+      children:
+        - type: Card
+          id: welcome_card
+          properties:
+            elevation: 2
+            margin:
+              all: 16
+            child:
+              - type: Padding
+                id: welcome_padding
+                properties:
+                  padding:
+                    all: 20
+                  child:
+                    - type: Column
+                      id: welcome_content
+                      properties:
+                        children:
+                          - type: Text
+                            id: welcome_title
+                            properties:
+                              text: "おかえりなさい！"
+                              fontSize: 24
+                          - type: SizedBox
+                            id: welcome_spacer
+                            properties:
+                              height: 8
+                          - type: Text
+                            id: welcome_message
+                            properties:
+                              text: "今日も素晴らしい一日にしましょう。"
+                              fontSize: 16
+        - type: Row
+          id: stats_row
+          properties:
+            mainAxisAlignment: spaceEvenly
+            children:
+              - type: Card
+                id: stats_card_1
+                properties:
+                  elevation: 1
+                  child:
+                    - type: Padding
+                      id: stats_padding_1
+                      properties:
+                        padding:
+                          all: 16
+                        child:
+                          - type: Column
+                            id: stats_content_1
+                            properties:
+                              crossAxisAlignment: center
+                              children:
+                                - type: Text
+                                  id: stats_number_1
+                                  properties:
+                                    text: "128"
+                                    fontSize: 32
+                                - type: Text
+                                  id: stats_label_1
+                                  properties:
+                                    text: "タスク完了"
+                                    fontSize: 14
+              - type: Card
+                id: stats_card_2
+                properties:
+                  elevation: 1
+                  child:
+                    - type: Padding
+                      id: stats_padding_2
+                      properties:
+                        padding:
+                          all: 16
+                        child:
+                          - type: Column
+                            id: stats_content_2
+                            properties:
+                              crossAxisAlignment: center
+                              children:
+                                - type: Text
+                                  id: stats_number_2
+                                  properties:
+                                    text: "24"
+                                    fontSize: 32
+                                - type: Text
+                                  id: stats_label_2
+                                  properties:
+                                    text: "進行中"
+                                    fontSize: 14
+              - type: Card
+                id: stats_card_3
+                properties:
+                  elevation: 1
+                  child:
+                    - type: Padding
+                      id: stats_padding_3
+                      properties:
+                        padding:
+                          all: 16
+                        child:
+                          - type: Column
+                            id: stats_content_3
+                            properties:
+                              crossAxisAlignment: center
+                              children:
+                                - type: Text
+                                  id: stats_number_3
+                                  properties:
+                                    text: "95%"
+                                    fontSize: 32
+                                - type: Text
+                                  id: stats_label_3
+                                  properties:
+                                    text: "成功率"
+                                    fontSize: 14
+        - type: Divider
+          id: main_divider
+          properties:
+            height: 20
+            thickness: 1
+            color: "#E0E0E0"
+        - type: ListView
+          id: news_list
+          properties:
+            shrinkWrap: true
+            itemSpacing: 8
+            children:
+              - type: ListItem
+                id: news_item_1
+                properties:
+                  title:
+                    - type: Text
+                      id: news_title_1
+                      properties:
+                        text: "システムメンテナンスのお知らせ"
+                  subtitle:
+                    - type: Text
+                      id: news_subtitle_1
+                      properties:
+                        text: "2024年1月15日 AM 2:00-4:00"
+              - type: ListItem
+                id: news_item_2
+                properties:
+                  title:
+                    - type: Text
+                      id: news_title_2
+                      properties:
+                        text: "新機能リリース"
+                  subtitle:
+                    - type: Text
+                      id: news_subtitle_2
+                      properties:
+                        text: "ダークモード対応が追加されました"
+              - type: ListItem
+                id: news_item_3
+                properties:
+                  title:
+                    - type: Text
+                      id: news_title_3
+                      properties:
+                        text: "定期メンテナンス完了"
+                  subtitle:
+                    - type: Text
+                      id: news_subtitle_3
+                      properties:
+                        text: "パフォーマンスが向上しました"

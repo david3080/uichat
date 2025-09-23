@@ -1,0 +1,40 @@
+name: login_form
+description: ログインフォーム完成画面（ユーザー名・パスワード・ボタン）
+rendering_environment: constrained
+
+widgets:
+  - type: Column
+    id: login_column
+    properties:
+      crossAxisAlignment: center
+      children:
+        - type: Text
+          id: title
+          properties:
+            text: "ログイン"
+            fontSize: 24
+        - type: SizedBox
+          id: spacer1
+          properties:
+            height: 24
+        - type: TextField
+          id: username_field
+          properties:
+            hintText: "ユーザー名を入力"
+        - type: SizedBox
+          id: spacer2
+          properties:
+            height: 16
+        - type: TextField
+          id: password_field
+          properties:
+            hintText: "パスワードを入力"
+            obscureText: true
+        - type: SizedBox
+          id: spacer3
+          properties:
+            height: 24
+        - type: ElevatedButton
+          id: login_button
+          properties:
+            text: "ログイン"
